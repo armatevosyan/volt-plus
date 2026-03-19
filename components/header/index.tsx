@@ -19,7 +19,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header
+    <div
       className={`
         fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out
         ${
@@ -101,6 +101,6 @@ export default function Header() {
           </Container>
         </div>
       )}
-    </header>
+    </div>
   );
 }
