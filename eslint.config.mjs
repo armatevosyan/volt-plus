@@ -16,6 +16,7 @@ const eslintConfig = defineConfig([
       quotes: ["error", "double"],
       indent: ["error", 2],
       "no-trailing-spaces": "error",
+      "@typescript-eslint/no-explicit-any": "off",
       "object-curly-spacing": ["error", "always"],
     },
   },

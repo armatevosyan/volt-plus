@@ -2,28 +2,36 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://Volt-plus.com"),
   title: {
-    default: "Volt-plus",
-    template: "%s | Volt-plus",
+    default: "Volt Plus",
+    template: "%s | Volt Plus",
   },
   icons: {
     icon: "/favicon.jpg",
   },
   description:
-    "Discover places, events, and real estate around you with Volt-plus.",
+    "Volt Plus՝ շինարարություն, վերանորոգում և ինժեներական աջակցություն Հայաստանում։",
 
-  keywords: ["Volt-plus", "places", "events", "real estate", "travel app"],
+  keywords: [
+    "Volt Plus",
+    "շինարարություն",
+    "վերանորոգում",
+    "նախագծեր",
+    "Երևան",
+  ],
 
-  authors: [{ name: "Volt-plus Team" }],
+  authors: [{ name: "Volt Plus" }],
 
   openGraph: {
-    title: "Volt-plus",
-    description: "Discover places, events, and real estate around you.",
+    title: "Volt Plus",
+    description:
+      "Շինարարություն, վերանորոգում և որակյալ իրականացում Հայաստանում։",
     url: "https://Volt-plus.com",
-    siteName: "Volt-plus",
+    siteName: "Volt Plus",
     images: [
       {
         url: "/og-image.jpg",
@@ -31,14 +39,15 @@ export const metadata: Metadata = {
         height: 630,
       },
     ],
-    locale: "en_US",
+    locale: "hy_AM",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Volt-plus",
-    description: "Discover places, events, and real estate around you.",
+    title: "Volt Plus",
+    description:
+      "Շինարարություն, վերանորոգում և որակյալ իրականացում Հայաստանում։",
     images: ["/og-image.jpg"],
   },
 
@@ -54,10 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="hy">
       <Header />
-      <body>{children}</body>
-      <Footer />
+      <Providers>
+        <body>{children}</body>
+        <Footer />
+      </Providers>
     </html>
   );
 }

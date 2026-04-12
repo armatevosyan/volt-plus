@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,7 +33,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
-    --foreground: #ededed;
+    /* Keep dark text on white; previous light foreground was invisible on white cards. */
+    --foreground: #171717;
   }
 }
 

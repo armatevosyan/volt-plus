@@ -2,21 +2,27 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Container from "@/components/Container";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
+  const url = usePathname();
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // If we scroll down more than 20px, update state
       setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (url === "/login" || url === "/signup" || url === "/admin") return;
+
+  const navClass = "hover:text-gray-600 transition-colors";
 
   return (
     <div
@@ -31,7 +37,7 @@ export default function Header() {
     >
       <Container>
         <div className="flex items-center justify-between h-18">
-          <div className="flex items-center gap-2">
+          <Link href="/#hero" className="flex items-center gap-2 text-secondary">
             <Image
               src="/logo.jpeg"
               alt="logo"
@@ -39,23 +45,31 @@ export default function Header() {
               height={40}
               className="rounded-full"
             />
-            <div className="text-xl font-bold text-secondary">Volt Plus</div>
-          </div>
+            <div className="text-xl font-bold">Volt Plus</div>
+          </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden tablet:flex items-center gap-6 text-secondary">
-            <a href="#" className="hover:text-gray-600">
-              Home
-            </a>
-            <a href="#" className="hover:text-gray-600">
-              Places
-            </a>
-            <a href="#" className="hover:text-gray-600">
-              Events
-            </a>
-            <a href="#" className="hover:text-gray-600">
-              Contact
-            </a>
+          <nav className="hidden tablet:flex items-center gap-4 laptop:gap-6 text-secondary text-sm laptop:text-base flex-wrap justify-end max-w-xl laptop:max-w-none">
+            <Link href="/#hero" className={navClass}>
+              Գլխավոր
+            </Link>
+            <Link href="/#services" className={navClass}>
+              Ծառայություններ
+            </Link>
+            <Link href="/#products" className={navClass}>
+              Ապրանքներ
+            </Link>
+            <Link href="/#reviews" className={navClass}>
+              Կարծիքներ
+            </Link>
+            <Link href="/#news" className={navClass}>
+              Լուրեր
+            </Link>
+            <Link href="/#works" className={navClass}>
+              Նախագծեր
+            </Link>
+            <Link href="/#contact" className={navClass}>
+              Կապ
+            </Link>
           </nav>
 
           {/* Desktop Button */}
@@ -81,18 +95,27 @@ export default function Header() {
         <div className="tablet:hidden border-t text-secondary bg-white">
           <Container>
             <nav className="flex flex-col gap-4 py-4">
-              <a href="#" onClick={() => setOpen(false)}>
-                Home
-              </a>
-              <a href="#" onClick={() => setOpen(false)}>
-                Places
-              </a>
-              <a href="#" onClick={() => setOpen(false)}>
-                Events
-              </a>
-              <a href="#" onClick={() => setOpen(false)}>
-                Contact
-              </a>
+              <Link href="/#hero" className={navClass} onClick={() => setOpen(false)}>
+                Գլխավոր
+              </Link>
+              <Link href="/#services" className={navClass} onClick={() => setOpen(false)}>
+                Ծառայություններ
+              </Link>
+              <Link href="/#products" className={navClass} onClick={() => setOpen(false)}>
+                Ապրանքներ
+              </Link>
+              <Link href="/#reviews" className={navClass} onClick={() => setOpen(false)}>
+                Կարծիքներ
+              </Link>
+              <Link href="/#news" className={navClass} onClick={() => setOpen(false)}>
+                Լուրեր
+              </Link>
+              <Link href="/#works" className={navClass} onClick={() => setOpen(false)}>
+                Նախագծեր
+              </Link>
+              <Link href="/#contact" className={navClass} onClick={() => setOpen(false)}>
+                Կապ
+              </Link>
 
               {/*<button className="mt-2 px-4 py-2 bg-black text-white rounded-lg">*/}
               {/*  Login*/}

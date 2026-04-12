@@ -1,9 +1,10 @@
 import Container from "@/components/Container";
 import Image from "next/image";
+import NewsletterForm from "@/components/footer/NewsletterForm";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#252641] text-white">
+    <footer id="contact" className="scroll-mt-24 bg-[#252641] text-white">
       <Container className="py-16 text-center">
         {/* Top (Logo + Title) */}
         <div className="flex items-center justify-center gap-4 mb-10">
@@ -22,20 +23,10 @@ export default function Footer() {
 
         {/* Newsletter */}
         <h3 className="text-lg text-gray-300 mb-6">
-          Subscribe to get our Newsletter
+          Բաժանորդագրվեք՝ ստանալու նորություններ էլ․ փոստով
         </h3>
 
-        <div className="flex flex-col mobile:flex-row items-center justify-center gap-4 mb-10">
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full mobile:w-[350px] px-5 py-3 rounded-full bg-transparent border border-gray-500 placeholder:text-gray-400 outline-none"
-          />
-
-          <button className="px-6 py-3 rounded-full bg-teal-400 text-white font-medium">
-            Subscribe
-          </button>
-        </div>
+        <NewsletterForm />
 
         {/* Contact Info */}
         <div className="text-gray-400 text-sm mb-6 space-y-2">
@@ -47,15 +38,15 @@ export default function Footer() {
 
         {/* Links */}
         <div className="flex items-center justify-center gap-4 text-gray-400 text-sm mb-4 flex-wrap">
-          <a href="#">Careers</a>
+          <a href="#">Կարիերա</a>
           <span>|</span>
-          <a href="#">Privacy Policy</a>
+          <a href="#">Գաղտնիության քաղաքականություն</a>
           <span>|</span>
-          <a href="#">Terms & Conditions</a>
+          <a href="#">Օգտագործման պայմաններ</a>
         </div>
 
         {/* Copyright */}
-        <p className="text-gray-500 text-sm">© 2026 Volt Plus Inc.</p>
+        <p className="text-gray-500 text-sm">© 2026 Volt Plus</p>
       </Container>
     </footer>
   );
