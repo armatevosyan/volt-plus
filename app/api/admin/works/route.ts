@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { requireAdminSession } from "@/lib/admin-session";
 
 export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 function parseStrings(v: unknown): string[] {
   if (!Array.isArray(v)) return [];
