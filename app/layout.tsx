@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import Providers from "./providers";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://Volt-plus.com"),
+  metadataBase: new URL("https://voltplus.com"),
   title: {
     default: "Volt Plus",
     template: "%s | Volt Plus",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Volt Plus",
     description:
       "Շինարարություն, վերանորոգում և որակյալ իրականացում Հայաստանում։",
-    url: "https://Volt-plus.com",
+    url: "https://voltplus.com",
     siteName: "Volt Plus",
     images: [
       {
