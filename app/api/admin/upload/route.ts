@@ -47,10 +47,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ url });
   } catch (e) {
     console.error(e);
-    const hint =
-      process.env.NODE_ENV === "development"
-        ? "Upload failed (could not write to public/uploads)"
-        : "Upload failed (check R2 env vars)";
-    return NextResponse.json({ error: hint }, { status: 500 });
+    return NextResponse.json(
+      { error: "Upload failed (check R2 configuration and env vars)" },
+      { status: 500 },
+    );
   }
 }
