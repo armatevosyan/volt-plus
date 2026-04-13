@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="flex items-center justify-center gap-4 mb-10">
           <Image
             src="/logo.jpeg"
-            alt="logo"
+            alt="Volt Plus logo"
             width={40}
             height={20}
             className="rounded-full"

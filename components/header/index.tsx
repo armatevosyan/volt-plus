@@ -40,7 +40,7 @@ export default function Header() {
           <Link href="/#hero" className="flex items-center gap-2 text-secondary">
             <Image
               src="/logo.jpeg"
-              alt="logo"
+              alt="Volt Plus logo"
               width={40}
               height={40}
               className="rounded-full"
