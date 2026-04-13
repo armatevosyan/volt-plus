@@ -64,11 +64,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="hy">
-      <Header />
-      <Providers>
-        <body>{children}</body>
-        <Footer />
-      </Providers>
+      <body>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }
